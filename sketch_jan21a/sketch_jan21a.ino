@@ -94,19 +94,11 @@ void loop(void) {
         }
     }
 
-    // O PIR ativa automaticamente o buzzer se detectar movimento
-    if (systemActive && alarmState == PIR_DETECT) {
-      digitalWrite(BUZZER, HIGH);
-      delay(5000); 
-      digitalWrite(BUZZER, LOW);
-      alarmState = STANDBY; // Reseta o estado do alarme
-    }
-
-
     if (digitalRead(PIR_SENSOR) == HIGH) {
     	Serial.println("Movimento detectado!");
     	digitalWrite(BUZZER, HIGH);
       	delay(8000);
       	digitalWrite(BUZZER, LOW);
+      	Serial.println("Standby");
+    }
 	}
-}

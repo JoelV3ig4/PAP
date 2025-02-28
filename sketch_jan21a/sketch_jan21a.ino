@@ -106,5 +106,7 @@ void loop(void) {
     if (digitalRead(PIR_SENSOR) == HIGH) {
     	Serial.println("Movimento detectado!");
     	digitalWrite(BUZZER, HIGH);
+      	delay(8000);
+      	digitalWrite(BUZZER, LOW);
 	}
 }
